@@ -62,7 +62,9 @@ class User implements UserInfo {
 	String photoUrl;
 	Endereco endereco;
 
-	User(this.email, this.displayName, this.providerId, this.phoneNumber,
+	User();
+
+	User.withData(this.email, this.displayName, this.providerId, this.phoneNumber,
 			this.photoUrl, this.endereco);
 }
 

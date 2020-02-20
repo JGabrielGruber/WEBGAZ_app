@@ -22,12 +22,12 @@ class _LoginScreenState extends State<LoginScreen> {
 				child: ListView(
 					padding: const EdgeInsets.symmetric(horizontal: 24.0),
 					children: <Widget>[
-						const SizedBox(height: 50.0),
+						const SizedBox(height: 25.0),
 						Column(
 							children: <Widget>[
 								Image(
 									image: AssetImage("assets/webgaz.png"),
-									height: 225,
+									width: (MediaQuery.of(context).size.width * 0.50),
 								),
 							],
 						),
@@ -71,7 +71,24 @@ class _LoginScreenState extends State<LoginScreen> {
 							},
 
 						),
-						const SizedBox(height: 48.0),
+						Column(
+							crossAxisAlignment: CrossAxisAlignment.end,
+							children: <Widget>[
+								FlatButton(
+									child: const Text(
+										"RECUPERAR SENHA!",
+										style: TextStyle(
+											fontWeight: FontWeight.normal,
+											fontSize: 12
+										),
+									),
+									onPressed: () {
+										print("SENHAAA");
+									},
+								)
+							],
+						),
+						const SizedBox(height: 40.0),
 						FlatButton(
 							child: const Text("CRIAR CONTA"),
 							onPressed: () {

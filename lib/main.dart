@@ -21,6 +21,19 @@ void main() => runApp(
         supportedLocales: [
           const Locale('pt', 'BR'),
         ],
+        theme: new ThemeData(
+          brightness: Brightness.light,
+          primaryColor: Colors.cyan,
+          textTheme: TextTheme(
+            headline6: TextStyle(
+              color: Colors.black26
+            ),
+          ),
+          appBarTheme: AppBarTheme(
+            color: Color.fromRGBO(250, 250, 250, 1),
+            elevation: 1
+          ),
+        ),
       ),
     )
 );
