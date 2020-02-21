@@ -171,7 +171,7 @@ class _FormUsuarioState extends State<FormUsuario> {
 							) : null,
 							RaisedButton(
 								child: Text(widget.isEdit ? "ATUALIZAR" : "CADASTRAR"),
-								color: Colors.blue,
+								color: Theme.of(context).primaryColor,
 								textColor: Colors.white,
 								onPressed: () {
 									print((widget.isEdit ? true : widget.termos));

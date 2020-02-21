@@ -21,8 +21,8 @@ void main() => runApp(
         supportedLocales: [
           const Locale('pt', 'BR'),
         ],
-        theme: new ThemeData(
-          brightness: Brightness.light,
+        theme: ThemeData(
+          brightness: Brightness.dark,
           primaryColor: Colors.cyan,
           textTheme: TextTheme(
             headline6: TextStyle(
