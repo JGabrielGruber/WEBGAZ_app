@@ -18,7 +18,9 @@ class _AnuncioState extends State<Anuncio> {
 				elevation: 2,
 				margin: EdgeInsets.all(15),
 				child: InkWell(
-					onTap: () {},
+					onTap: () {
+						Navigator.of(context).pushNamed("/main/detalhe");
+					},
 					child: Padding(
 						padding: EdgeInsets.all(10),
 						child: Column(

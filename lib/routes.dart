@@ -1,3 +1,4 @@
+import 'package:webgaz_app/screens/detalhes.dart';
 import 'package:webgaz_app/screens/login.dart';
 import 'package:webgaz_app/screens/main.dart';
 import 'package:webgaz_app/screens/perfil.dart';
@@ -9,4 +10,5 @@ var routes = {
 	"/signup": (BuildContext context) => SignupScreen(),
 	"/main": (BuildContext context) => MainScreen(),
 	"/main/perfil": (BuildContext context) => PerfilScreen(),
+	"/main/detalhe": (BuildContext context) => DetalheScreen(),
 };
