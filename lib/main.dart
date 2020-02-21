@@ -22,7 +22,7 @@ void main() => runApp(
           const Locale('pt', 'BR'),
         ],
         theme: ThemeData(
-          brightness: Brightness.dark,
+          brightness: Brightness.light,
           primaryColor: Colors.cyan,
           textTheme: TextTheme(
             headline6: TextStyle(
