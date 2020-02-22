@@ -24,41 +24,47 @@ class _ConsumoState extends State<Consumo> {
 
   @override
   Widget build(BuildContext context) {
-    return new charts.TimeSeriesChart(
-      seriesList,
-      animate: animate,
-      defaultRenderer: new charts.LineRendererConfig(
-          includeArea: false,
-          stacked: false
-      ),
-      // Optionally pass in a [DateTimeFactory] used by the chart. The factory
-      // should create the same type of [DateTime] as the data provided. If none
-      // specified, the default creates local date time.
-      dateTimeFactory: const charts.LocalDateTimeFactory(),
-      behaviors: [
-        charts.SeriesLegend(
-          showMeasures: true,
-          desiredMaxColumns: 3,
-          horizontalFirst: true,
-          outsideJustification: charts.OutsideJustification.start,
-          measureFormatter: (num valor) {
-              return "${valor}%";
-            }
+    return Container(
+      padding: EdgeInsets.all(20),
+      child: charts.TimeSeriesChart(
+        seriesList,
+        animate: animate,
+        defaultRenderer: new charts.LineRendererConfig(
+            includeArea: false,
+            stacked: false
         ),
-      ],
+        // Optionally pass in a [DateTimeFactory] used by the chart. The factory
+        // should create the same type of [DateTime] as the data provided. If none
+        // specified, the default creates local date time.
+        dateTimeFactory: const charts.LocalDateTimeFactory(),
+        behaviors: [
+          charts.SeriesLegend(
+              showMeasures: true,
+              desiredMaxColumns: 3,
+              horizontalFirst: true,
+              outsideJustification: charts.OutsideJustification.start,
+              measureFormatter: (num valor) {
+                if (valor != null)
+                  return "${valor}%";
+                return "";
+              }
+          ),
+          charts.PanAndZoomBehavior(),
+        ],
+      ),
     );
   }
 
   /// Create one series with sample hard coded data.
   static List<charts.Series<TimeSeriesConsumo, DateTime>> _createSampleData() {
     final dataCozinha = [
-      new TimeSeriesConsumo(new DateTime(2020, 2, 20, 10, 30, 0), 30),
-      new TimeSeriesConsumo(new DateTime(2020, 2, 20, 11, 0, 0), 30),
-      new TimeSeriesConsumo(new DateTime(2020, 2, 20, 11, 25, 0), 27),
-      new TimeSeriesConsumo(new DateTime(2020, 2, 20, 11, 30, 0), 25),
-      new TimeSeriesConsumo(new DateTime(2020, 2, 20, 11, 45, 0), 22),
-      new TimeSeriesConsumo(new DateTime(2020, 2, 20, 12, 0, 0), 20),
-      new TimeSeriesConsumo(new DateTime(2020, 2, 20, 13, 0, 0), 20),
+      new TimeSeriesConsumo(new DateTime(2020, 2, 20, 10, 30, 0), 20),
+      new TimeSeriesConsumo(new DateTime(2020, 2, 20, 11, 0, 0), 20),
+      new TimeSeriesConsumo(new DateTime(2020, 2, 20, 11, 25, 0), 17),
+      new TimeSeriesConsumo(new DateTime(2020, 2, 20, 11, 30, 0), 15),
+      new TimeSeriesConsumo(new DateTime(2020, 2, 20, 11, 45, 0), 12),
+      new TimeSeriesConsumo(new DateTime(2020, 2, 20, 12, 0, 0), 10),
+      new TimeSeriesConsumo(new DateTime(2020, 2, 20, 13, 0, 0), 9.9),
     ];
 
     final dataQuiosque = [

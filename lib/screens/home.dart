@@ -15,7 +15,7 @@ class _HomeState extends State<Home> {
 			body: GridView.count(
 				crossAxisCount: 2,
 				children: <Widget>[
-					Indicador("Cozinha", 0.20, Colors.cyan),
+					Indicador("Cozinha", 0.099, Colors.cyan),
 					Indicador("Quiosque", 0.85, Colors.lime),
 					Indicador("Escritório", 0.505, Colors.deepOrange),
 				],
